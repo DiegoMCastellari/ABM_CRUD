@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> ABM </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Productos</h1>
+    <a href="/productos/agregar"><button>AGREGAR PRODUCTO</button></a>
+    <br>
+    <h2>Lista de Productos:</h2>
+    <% if (listaProductos.length > 0){ %>
+    <ul>
+      <% for ( let i=0; i<listaProductos.length; i++ ){ %>
+      <li>
+        <%= listaProductos[i].id %>: <%= listaProductos[i].nombre %> - $<%= listaProductos[i].precio %>      
+        <br>
+        <%= listaProductos[i].descripcion %>
+      </li>
+      <a href="/productos/editar/<%=listaProductos[i].id %>"><button>EDITAR</button></a>
+      <a href="/productos/borrar/<%=listaProductos[i].id %>"><button>BORRAR</button></a>
+      <br><br><br>
+      <% } %>
+    <% } else { %>
+      <h2> -- Ningún producto agregado. -- </h2>
+    <% } %>
+    </ul>
+    <a href="/"><button>Volver al Home</button></a>
+  </body>
+</html>

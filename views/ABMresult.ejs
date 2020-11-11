@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% if (resultadoABM == "productoAgregado"){ %>
+        <h2>Producto creado exitosamente.</h2>
+        <a href="/productos/agregar"><button>Volver a Agregar Productos</button></a>
+        <a href="/productos"><button>Volver a Productos</button></a>
+        <a href="/"><button>Volver al Home</button></a>
+    <% } else if (resultadoABM == "productoBorrado"){ %>
+        <h2>Producto <%= productoBorrado.id %>-<%= productoBorrado.nombre %> eliminado exitosamente.</h2>
+        <a href="/productos"><button>Volver a Productos</button></a>
+        <a href="/"><button>Volver al Home</button></a>
+    <% } else if (resultadoABM == "productoNOBorrado"){ %>
+        <h2>Producto a eliminar no encontrado.</h2>
+        <a href="/productos"><button>Volver a Productos</button></a>
+        <a href="/"><button>Volver al Home</button></a>
+    <% } %>
+
+</body>
+</html>

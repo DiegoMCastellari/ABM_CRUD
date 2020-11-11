@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABM - Borrar</title>
+</head>
+<body>
+    <h1>Borrar Producto</h1>
+    <h2>Producto a borrar:</h2>
+    <form action= "/productos/borrar/<%= productoSeleccionado.id %>" method="POST">
+        <label for="id">ID: </label><input type="number" name="id" value="<%= productoSeleccionado.id %>" disabled>
+        <br><br>
+        <label for="nombre">Nombre: </label><input type="text" name="nombre" value="<%= productoSeleccionado.nombre %>" disabled>
+        <br><br>
+        <label for="precio">Precio: </label><input type="number" name="precio" value="<%= productoSeleccionado.precio %>" disabled>
+        <br><br>
+        <label for="descripcion">Descripción: </label><input type="text" name="descripcion" value="<%= productoSeleccionado.descripcion %>" disabled>
+        <br><br>
+        <label for="marca">Marca: </label><input type="text" name="marca" value="<%= productoSeleccionado.marca %>" disabled>
+        <br><br>
+        <label for="stock">Stock: </label><input type="number" name="stock" value="<%= productoSeleccionado.stock %>" disabled>
+        <br><br>
+        <button type="submit">BORRAR PRODUCTO</button>
+    </form>
+    <br><br>
+    <a href="/productos"><button>Volver al Productos</button></a>
+</body>
+</html>

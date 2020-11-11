@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABM - Editar</title>
+</head>
+<body>
+    <h1>Edición de Productos</h1>
+    <% if (resultadoABM == "productoEditado"){ %>
+        <h2>Producto editado exitosamente:</h2>
+        <% if ( productoAEditar.nombre != productoSeleccionado.nombre ){ %>
+            <p><b>Nombre: </b><%= productoAEditar.nombre %> ==> <%= productoSeleccionado.nombre %></p>
+        <% } %> 
+        <% if ( productoAEditar.precio != productoSeleccionado.precio ){ %>
+            <p><b>Precio: </b> <%= productoAEditar.precio %> ==> <%= productoSeleccionado.precio %></p>
+        <% } %> 
+        <% if ( productoAEditar.descripcion != productoSeleccionado.descripcion ){ %>
+            <p><b>Descripción: </b> <%= productoAEditar.descripcion %> ==> <%= productoSeleccionado.descripcion %></p>
+        <% } %> 
+        <% if ( productoAEditar.marca != productoSeleccionado.marca ){ %>
+            <p><b>Marca: </b> <%= productoAEditar.marca %> ==> <%= productoSeleccionado.marca %></p>
+        <% } %> 
+        <% if ( productoAEditar.stock != productoSeleccionado.stock ){ %>
+            <p><b>Stock: </b> <%= productoAEditar.stock %> ==> <%= productoSeleccionado.stock %></p>
+        <% } %> 
+        <br>
+    <% } %> 
+    <h2>Datos a editar:</h2>
+    <form action= "/productos/editar/<%= productoSeleccionado.id %>" method="POST">
+        <label for="id">ID: </label><input type="number" name="id" value="<%= productoSeleccionado.id %>" readonly >
+        <br><br>
+        <label for="nombre">Nombre: </label><input type="text" name="nombre" value="<%= productoSeleccionado.nombre %>" >
+        <br><br>
+        <label for="precio">Precio: </label><input type="number" name="precio" value="<%= productoSeleccionado.precio %>" >
+        <br><br>
+        <label for="descripcion">Descripción: </label><input type="text" name="descripcion" value="<%= productoSeleccionado.descripcion %>" >
+        <br><br>
+        <label for="marca">Marca: </label><input type="text" name="marca" value="<%= productoSeleccionado.marca %>" >
+        <br><br>
+        <label for="stock">Stock: </label><input type="number" name="stock" value="<%= productoSeleccionado.stock %>" >
+        <br><br>
+        <button type="submit">EDITAR PRODUCTO</button>
+    </form>
+    <br><br>
+    <a href="/productos"><button>Volver al Productos</button></a>
+</body>
+</html>

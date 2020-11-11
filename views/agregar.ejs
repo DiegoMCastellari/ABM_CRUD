@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABM - Agregar</title>
+</head>
+<body>
+    <h1>Agregar Producto</h1>
+    <h2>Carga de datos del producto:</h2>
+    <form action="/productos/agregar" method="POST">
+        <label for="id">ID: </label><input type="number" name="id" value=<%= listaProductos.length+1 %> >
+        <br><br>
+        <label for="nombre">Nombre: </label><input type="text" name="nombre">
+        <br><br>
+        <label for="precio">Precio: </label><input type="number" name="precio">
+        <br><br>
+        <label for="descripcion">Descripción: </label><input type="text" name="descripcion">
+        <br><br>
+        <label for="marca">Marca: </label><input type="text" name="marca">
+        <br><br>
+        <label for="stock">Stock: </label><input type="number" name="stock">
+        <br><br>
+        <button type="submit">AGREGAR PRODUCTO</button>
+    </form>
+    <br><br>
+    <a href="/productos"><button>Volver a Productos</button></a>
+</body>
+</html>
